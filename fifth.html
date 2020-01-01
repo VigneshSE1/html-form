@@ -1,0 +1,151 @@
+<html>
+
+<head>
+    <title>Fifth Task</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <script>
+        // c = 0
+
+        // function myfunction() {
+
+        //     var x = document.createElement("tr");
+        //     x.setAttribute("id", c);
+        //     document.getElementById("tableid").appendChild(x);
+
+        //     var myname = document.createElement("td");
+        //     myname.innerHTML = document.getElementById("nameid").value;
+        //     document.getElementById(c).appendChild(myname);
+
+        //     var myage = document.createElement("td");
+        //     myage.innerHTML = document.getElementById("ageid").value;
+        //     document.getElementById(c).appendChild(myage);
+
+        //     var mycountry = document.createElement("td");
+        //     mycountry.innerHTML = document.getElementById("countryid").value;
+        //     document.getElementById(c).appendChild(mycountry);
+
+        //     var mystate = document.createElement("td");
+        //     mystate.innerHTML = document.getElementById("stateid").value;
+        //     document.getElementById(c).appendChild(mystate);
+
+        //     var mycity = document.createElement("td");
+        //     mycity.innerHTML = document.getElementById("cityid").value;
+        //     document.getElementById(c).appendChild(mycity);
+        //     c++
+        // }
+        c = 0;
+
+        function myfunction() {
+            var tabledata = [];
+            tabledata.push({
+                name: document.getElementById("nameid").value,
+                age: document.getElementById("ageid").value,
+                country: document.getElementById("countryid").value,
+                state: document.getElementById("stateid").value,
+                city: document.getElementById("cityid").value
+            })
+            var x = document.createElement("tr");
+            x.setAttribute("id", c);
+            document.getElementById("tableid").appendChild(x);
+
+            tabledata.forEach(element => {
+                var y = document.createElement("td");
+                var y1 = document.createElement("td");
+                var y2 = document.createElement("td");
+                var y3 = document.createElement("td");
+                var y4 = document.createElement("td");
+
+                y.innerHTML = element.name;
+                document.getElementById(c).appendChild(y);
+                y1.innerHTML = element.age;
+                document.getElementById(c).appendChild(y1);
+                y2.innerHTML = element.country;
+                document.getElementById(c).appendChild(y2);
+                y3.innerHTML = element.state;
+                document.getElementById(c).appendChild(y3);
+                y4.innerHTML = element.city;
+                document.getElementById(c).appendChild(y4);
+                c++;
+            })
+
+
+            // Object.keys(tabledata[0]).forEach(keey) {
+            //     var y = document.createElement("td");
+            //     y.innerHTML = tabledata[0][keey];
+            //     document.getElementById(c).appendChild(y);
+
+            // }
+            // c++;
+        }
+    </script>
+    <div class="left">
+        <form class="form1">
+            <label for="">First name:</label>
+            <br>
+            <input type="text" name="firstname" id="nameid"><br>
+            <label for="">Age:</label>
+            <br>
+            <input type="number" id="ageid" name="lastname">
+            <br>
+
+            <label for="">Country:</label><br>
+            <select name="Country" id="countryid">
+                                <option>INDIA</option>
+                                <option>USA</option>
+                        </select><br>
+
+            <label for="">State:</label><br>
+            <select name="state" id="stateid">
+                                <option>state1</option>
+                                <option>state2</option>
+                                <option>state3</option>
+                        </select><br>
+            <label for="">City:</label><br>
+            <select name="city" id="cityid">
+                                <option>city1</option>
+                                <option>city2</option>
+                                <option>city3</option>
+                        </select><br>
+
+
+            <label for="">Gender</label><br>
+            <input type="radio" name="gender" checked> Male
+            <input type="radio" name="gender"> Female<br>
+
+            <label for="">Marital Status</label><br>
+            <input type="radio" name="ms" checked> Married
+            <input type="radio" name="ms"> Unmarried<br>
+
+            <label for="">skills</label><br>
+            <input type="checkbox" name="sk"> C
+            <input type="checkbox" name="sk"> C++
+            <input type="checkbox" name="sk"> Java
+            <input type="checkbox" name="sk"> Python <br>
+
+            <label for="">Tell me yourself:</label><br>
+            <input type="text"><br>
+
+            <input type="submit" onclick="myfunction(); return false; ">
+        </form>
+
+    </div>
+    <div class="right" id="rightid">
+        <table border="2" class="tableclass" id="tableid">
+
+            <tr>
+                <th>Firstname</th>
+                <th>Age</th>
+                <th>Country</th>
+                <th>State</th>
+                <th>City</th>
+            </tr>
+
+        </table>
+    </div>
+
+</body>
+
+</html>
